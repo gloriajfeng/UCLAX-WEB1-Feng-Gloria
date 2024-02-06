@@ -3,12 +3,14 @@ import styled from "styled-components";
 import { breakpoints, useMediaQuery } from "@/Common/useMediaQuery.jsx";
 
 const ResponsiveDesign = () => {
+    const { isMediumAndUp } = useMediaQuery();
+
     return (
         <ResponsiveDesignStyled>
             <h2>Responsive Design</h2>
 
             <div className="boxes">
-                <div className="box box1">1</div>
+                {isMediumAndUp && <div className="box box1">1</div>}
                 <div className="box box2">2</div>
                 <div className="box box3">3</div>
             </div>
