@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 import PropTypes from "prop-types";
 
-const MainMenu = ({ onClick }) => {
+const MainMenu = ({ onClick = () => {} }) => {
     return (
         <MainMenuStyled onClick={onClick}>
             <NavLink to={"/"} end>
@@ -18,7 +18,7 @@ const MainMenu = ({ onClick }) => {
 export default MainMenu;
 
 // prop-types
-MainMenu.PropTypes = {
+MainMenu.propTypes = {
     onClick: PropTypes.func,
 };
 
