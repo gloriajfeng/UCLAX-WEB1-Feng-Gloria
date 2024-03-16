@@ -2,11 +2,11 @@ import styled from "styled-components";
 import PropTypes from "prop-types";
 
 const Submission = ({ sub }) => {
-    const { name, email, message } = sub;
+    const { name, email, phonenumber } = sub;
 
     return (
         <SubmissionStyled>
-            {name} : {email} : {message}
+            {name} : {email} : {phonenumber}
         </SubmissionStyled>
     );
 };

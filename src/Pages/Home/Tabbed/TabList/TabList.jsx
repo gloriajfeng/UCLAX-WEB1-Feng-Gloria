@@ -27,4 +27,6 @@ TabList.propTypes = {
     tabs: PropTypes.array.isRequired,
 };
 
-const TabListStyled = styled.div``;
+const TabListStyled = styled.div`
+    display: flex;
+`;

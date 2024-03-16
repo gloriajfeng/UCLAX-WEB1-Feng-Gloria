@@ -28,7 +28,7 @@ TabContent.propTypes = {
 };
 
 const TabContentStyled = styled.div`
-    padding: 20px;
+    padding: 32px;
     background-color: #f6d0c0;
 
     @media ${breakpoints.isMediumAndUp} {
@@ -37,21 +37,28 @@ const TabContentStyled = styled.div`
         gap: 1rem;
     }
 
+    .column1 {
+        width: 700px;
+    }
+
     img {
         max-width: 100%;
         display: block;
         margin: 0px auto 15px;
+        border-radius: 4px;
     }
 
     h3 {
-        font-size: 30px;
+        font-size: 24px;
         color: #452516;
+        padding-left: 30px;
     }
 
     p {
-        font-size: 18px;
+        font-size: 14px;
         color: black;
         margin-bottom: 20px;
         line-height: 150%;
+        padding-left: 30px;
     }
 `;

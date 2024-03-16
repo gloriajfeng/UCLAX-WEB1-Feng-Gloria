@@ -6,6 +6,7 @@ import axios from "axios";
 import Inset from "@/Common/PagesLayout/Inset.jsx";
 import SubmissionList from "./SubmissionList.jsx";
 import Form from "./Form.jsx";
+import Calendar from "./Calendar.jsx";
 
 const Contact = () => {
     const [submissions, setSubmissions] = useState([]);
@@ -22,8 +23,9 @@ const Contact = () => {
     return (
         <ContactStyled>
             <Inset>
-                <h1>Contact</h1>
+                <h1>Reserve</h1>
                 <Form getSubmissions={getSubmissions} />
+                <Calendar />
                 <SubmissionList submissions={submissions} />
             </Inset>
         </ContactStyled>

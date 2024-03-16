@@ -3,15 +3,17 @@ import PropTypes from "prop-types";
 import { useState } from "react";
 import { v4 as uuid } from "uuid";
 import axios from "axios";
+import Calendar from "./Calendar.jsx";
 
 //components
 import Input from "./Input.jsx";
-import TextArea from "./TextArea.jsx";
 
 const Form = ({ getSubmissions }) => {
     const [inputName, setInputName] = useState("");
     const [inputEmail, setInputEmail] = useState("");
-    const [inputMessage, setInputMessage] = useState("");
+    const [inputNumber, setInputNumber] = useState("");
+    const [inputGuest, setInputGuest] = useState("");
+    const [inputDate, setInputDate] = useState("");
 
     const inputNameOnChange = (e) => {
         setInputName(e.target.value);
@@ -19,14 +21,22 @@ const Form = ({ getSubmissions }) => {
     const inputEmailOnChange = (e) => {
         setInputEmail(e.target.value);
     };
-    const inputMessageOnChange = (e) => {
-        setInputMessage(e.target.value);
+    const inputNumberOnChange = (e) => {
+        setInputNumber(e.target.value);
+    };
+    const inputGuestOnChange = (e) => {
+        setInputGuest(e.target.value);
+    };
+    const inputDateOnChange = (e) => {
+        setInputDate(e.target.value);
     };
 
     const restForm = () => {
         setInputName("");
         setInputEmail("");
-        setInputMessage("");
+        setInputNumber("");
+        setInputGuest("");
+        setInputDate("");
     };
 
     const onSubmit = async (e) => {
@@ -36,7 +46,7 @@ const Form = ({ getSubmissions }) => {
             id: uuid(),
             name: inputName,
             email: inputEmail,
-            message: inputMessage,
+            phonenumber: inputNumber,
         };
 
         await axios.post("http://localhost:4059/submissions", postData);
@@ -44,6 +54,7 @@ const Form = ({ getSubmissions }) => {
         getSubmissions();
     };
 
+    // form
     return (
         <FormStyled onSubmit={onSubmit}>
             <Input
@@ -59,17 +70,37 @@ const Form = ({ getSubmissions }) => {
                 onChange={inputEmailOnChange}
                 value={inputEmail}
             />
-            <TextArea
-                id="message"
-                labelText="Message"
-                onChange={inputMessageOnChange}
-                value={inputMessage}
+            <Input
+                id="phonenumber"
+                labelText="Phone number"
+                onChange={inputNumberOnChange}
+                value={inputNumber}
+            />
+            <Input
+                id="#ofguest"
+                labelText="How many guests"
+                onChange={inputGuestOnChange}
+                value={inputGuest}
+            />
+            <Input
+                inputType="date"
+                id="date"
+                labelText="Date"
+                onChange={inputDateOnChange}
+                value={inputDate}
             />
 
-            <button type="submit">Send</button>
-            <button type="button" onClick={restForm}>
-                Reset
-            </button>
+            <ButtonWrapperStyled>
+                <div>
+                    <button type="submit">Send</button>
+                </div>
+
+                <div>
+                    <button type="button" onClick={restForm}>
+                        Reset
+                    </button>
+                </div>
+            </ButtonWrapperStyled>
         </FormStyled>
     );
 };
@@ -80,6 +111,12 @@ export default Form;
 Form.propTypes = {
     getSubmissions: PropTypes.func.isRequired,
 };
+
+const ButtonWrapperStyled = styled.div`
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 24px;
+`;
 
 const FormStyled = styled.form`
     .input-group {
@@ -114,6 +151,11 @@ const FormStyled = styled.form`
         border: none;
         outline: none;
         border-radius: 40px;
+
+        /* margin-right: 24px; */
+
+        display: block;
+        width: 100%;
 
         cursor: pointer;
 

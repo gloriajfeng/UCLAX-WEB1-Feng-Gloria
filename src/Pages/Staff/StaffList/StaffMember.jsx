@@ -13,7 +13,7 @@ const StaffMember = ({ member }) => {
 
             <div className="bottom">
                 <p>
-                    <b>Year Started:</b> {yearStarted}
+                    <b>Year Joined:</b> {yearStarted}
                 </p>
 
                 <Accolades accolades={accolades} />
@@ -30,7 +30,7 @@ StaffMember.propTypes = {
 };
 
 const StaffMemberStyled = styled.div`
-    background-color: #eeeeee;
+    background-color: white;
     border-radius: 10px;
 
     img {

@@ -65,11 +65,12 @@ const Form = ({ getSubmissions }) => {
                 onChange={inputMessageOnChange}
                 value={inputMessage}
             />
-
-            <button type="submit">Send</button>
-            <button type="button" onClick={restForm}>
-                Reset
-            </button>
+            <ButtonWrapperStyled>
+                <button type="submit">Send</button>
+                <button type="button" onClick={restForm}>
+                    Reset
+                </button>
+            </ButtonWrapperStyled>
         </FormStyled>
     );
 };
@@ -80,6 +81,12 @@ export default Form;
 Form.propTypes = {
     getSubmissions: PropTypes.func.isRequired,
 };
+
+const ButtonWrapperStyled = styled.div`
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 24px;
+`;
 
 const FormStyled = styled.form`
     .input-group {
