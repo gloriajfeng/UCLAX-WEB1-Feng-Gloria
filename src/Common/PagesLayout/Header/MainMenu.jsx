@@ -11,6 +11,7 @@ const MainMenu = ({ onClick = () => {} }) => {
             <NavLink to={"/staff"}>Staff</NavLink>
             <NavLink to={"/contact"}>Contact</NavLink>
             <NavLink to={"/course-work"}>Course</NavLink>
+            <NavLink to={"/reservation"}>Reservation</NavLink>
         </MainMenuStyled>
     );
 };
