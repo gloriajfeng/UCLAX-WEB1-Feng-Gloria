@@ -66,10 +66,15 @@ const Form = ({ getSubmissions }) => {
                 value={inputMessage}
             />
             <ButtonWrapperStyled>
-                <button type="submit">Send</button>
-                <button type="button" onClick={restForm}>
-                    Reset
-                </button>
+                <div>
+                    <button type="submit">Send</button>
+                </div>
+
+                <div>
+                    <button type="button" onClick={restForm}>
+                        Reset
+                    </button>
+                </div>
             </ButtonWrapperStyled>
         </FormStyled>
     );
@@ -104,7 +109,7 @@ const FormStyled = styled.form`
         font-size: 14px;
         padding: 10px;
         width: 100%;
-        background-color: #eee;
+        background-color: white;
         border: solid 1px #999;
         border-radius: 4px;
     }
@@ -117,10 +122,15 @@ const FormStyled = styled.form`
         background-color: #452516;
         padding: 10px 5px;
         color: white;
-        width: 150px;
+
         border: none;
         outline: none;
         border-radius: 40px;
+
+        /* margin-right: 24px; */
+
+        display: block;
+        width: 100%;
 
         cursor: pointer;
 

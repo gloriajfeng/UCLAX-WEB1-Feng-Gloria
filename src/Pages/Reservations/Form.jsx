@@ -82,13 +82,8 @@ const Form = ({ getSubmissions }) => {
                 onChange={inputGuestOnChange}
                 value={inputGuest}
             />
-            <Input
-                inputType="date"
-                id="date"
-                labelText="Date"
-                onChange={inputDateOnChange}
-                value={inputDate}
-            />
+
+            <Calendar inputType="date" id="date" labelText="Date" />
 
             <ButtonWrapperStyled>
                 <div>
@@ -134,7 +129,7 @@ const FormStyled = styled.form`
         font-size: 14px;
         padding: 10px;
         width: 100%;
-        background-color: #eee;
+        background-color: white;
         border: solid 1px #999;
         border-radius: 4px;
     }
@@ -147,7 +142,7 @@ const FormStyled = styled.form`
         background-color: #452516;
         padding: 10px 5px;
         color: white;
-        width: 150px;
+
         border: none;
         outline: none;
         border-radius: 40px;

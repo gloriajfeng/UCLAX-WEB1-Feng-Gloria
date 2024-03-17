@@ -22,4 +22,16 @@ const Slideshow = () => {
 
 export default Slideshow;
 
-const SlideshowStyled = styled.div``;
+const SlideshowStyled = styled.div`
+    .carousel .slide .legend {
+        background-color: white;
+
+        text-align: center;
+        color: black;
+    }
+
+    .carousel .control-dots .dot {
+        width: 20px;
+        height: 20px;
+    }
+`;

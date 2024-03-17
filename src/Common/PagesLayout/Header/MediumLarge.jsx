@@ -26,6 +26,7 @@ export default MediumLarge;
 
 const MediumLargeStyled = styled.div`
     color: #452516;
+    padding-bottom: 20px;
 
     .logo {
         .SiteLogo {
@@ -39,7 +40,7 @@ const MediumLargeStyled = styled.div`
         text-align: center;
         a {
             width: 100px;
-            display: inline-block;
+            display: inline;
 
             line-height: 30px;
             margin: 0px 0px 20px 24px;
@@ -51,7 +52,7 @@ const MediumLargeStyled = styled.div`
             color: #452516;
             font-weight: bold;
             text-decoration: none;
-            text-transform: uppercase;
+            text-transform: none;
 
             &:hover,
             &:active,

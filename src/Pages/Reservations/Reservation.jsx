@@ -25,7 +25,6 @@ const Contact = () => {
             <Inset>
                 <h1>Reserve</h1>
                 <Form getSubmissions={getSubmissions} />
-                <Calendar />
                 <SubmissionList submissions={submissions} />
             </Inset>
         </ContactStyled>
